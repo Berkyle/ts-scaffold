@@ -1,0 +1,28 @@
+{
+  "scripts": {
+    "clean:install": "yarn clean 2> /dev/null; yarn install",
+    "clean": "[[ -d node_modules ]] && rm -rf node_modules",
+    "lint": "eslint . --ext .ts,.js",
+    "prestart": "[[ -d node_modules ]] || yarn install",
+    "start": "ts-node src/index.ts",
+    "start-dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+  },
+  "dependencies": {
+    "@types/node": "^12.12.14",
+    "awesome-typescript-loader": "^5.2.1",
+    "dotenv": "^8.2.0",
+    "source-map-loader": "^0.2.4",
+    "ts-node": "^8.9.0",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.15.0",
+    "@typescript-eslint/parser": "^2.15.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "nodemon": "^2.0.3",
+    "prettier": "^2.0.5",
+    "prettier-eslint": "^9.0.1"
+  }
+}
